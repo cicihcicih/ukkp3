@@ -1,7 +1,7 @@
 @extends('template.masterbaru')
 
 @section('judul')
-    <h1>Data table paket</h1>
+    <h1>Data Outlet</h1>
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-    <a href="/paket/create" class="btn btn-primary">
+    <a href="member/create" class="btn btn-primary">
           <i class="fas fa-plus"></i>
            Tambah
         </a>
@@ -27,27 +27,29 @@
         <thead>
         <tr>
         <td class="td1">No</td>
-        <td class="td5">Outlet Id</td>
-        <td class="td2">Jenis</td>
-        <td class="td3">Nama Paket</td>
-        <td class="td4">Harga</td>
+        <td class="td5">Nama</td>
+        <td class="td3">Alamat</td>
+        <td class="td4">Jenis Kelamin</td>
+        <td class="td2">telepon</td>
         <td class="td4">Action</td>
         </tr>
         </thead>
         <tbody>
-          @forelse($paket as $paket)
-          <th class="th1">{{ $loop->iteration}}</th>
-        <td class="th2">{{ $paket->outlets_id }}</td>
-        <td class="th3">{{ $paket->jenis }}</td>
-        <td class="th2">{{ $paket->nama_paket }}</td>
-        <td class="th2">{{ $paket->harga }}</td>
-        <td class="th4">
-        <form action="{{route ('paket.destroy', [$paket->id])}}" method="POST">
-        <a class="btn btn-info mr-3" href="paket/{{ $paket->id }}">DETAIL</a>
-        <a class="btn btn-warning mr-3" href="paket/{{ $paket->id}}/edit">EDIT</a>
-        @csrf
-        @method('DELETE')
-        <input type="submit" class="btn btn-danger" value="hapus azza">
+          @forelse($member as $member)
+         <tr>
+          <td>{{ $loop->iteration }}</td>
+          <td>{{ $member->nama }}</td>
+           <td>{{ $member->alamat }}</td>
+          <td>{{ $member->jenis_kelamin }}</td>
+          <td>{{ $member->tlp }}</td>
+          <td>
+          <form action="{{route ('member.destroy', [$member->id])}}" method="POST">
+              <a class="btn btn-info mr-3" href="member/{{ $member->id }}">Detail</a>
+              <a class="btn btn-warning mr-3" href="member/{{ $member->id }}/edit">Edit</a>
+            @csrf
+            @method('DELETE')
+           <input type="submit" class="btn btn-danger" value="Delete">
+          </form>
             </td>
          </tr>
          @empty
@@ -59,18 +61,17 @@
       </table>
     </div>
     <!-- /.card-body -->
-  
 @endsection
 
 @push('scripts')
-<script src="{{ asset ('adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ asset ('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 
-<!-- <script>
+<script>
     $(function () {
-     $('#data-table').DataTable();
+     $('#data-member').Datamember();
         
-      $('#example2').DataTable({
+      $('#example2').Datamember({
         "paging": true,
         "lengthChange": true,
         "searching": true,
@@ -80,7 +81,7 @@
         "responsive": true,
       });
     });
-  </script> -->
+  </script>
 @endpush
   
 

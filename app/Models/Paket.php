@@ -11,11 +11,11 @@ class Paket extends Model
 
     protected $table = "pakets";
     protected $fillable = [
-        'id','outlet_id','jenis','nama_paket','harga'
+        'id','outlets_id','jenis','nama_paket','harga'
     ];
 
     public function outlet()
     {
-        return $this->hasOne('App\Outlet','outlet_id');
+        return $this->hasOne('App\Outlet','outlets_id');
     }
 }

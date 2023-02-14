@@ -15,6 +15,8 @@ class MemberController extends Controller
     public function index()
     {
         //
+        $member = Member::all();
+        return view('member.index',compact('member'));
     }
 
     /**
@@ -25,6 +27,9 @@ class MemberController extends Controller
     public function create()
     {
         //
+        $member = Member::all();
+        return view('member.create',compact('member'));
+
     }
 
     /**
@@ -36,6 +41,19 @@ class MemberController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required',
+            'jenis_kelamin' => 'required',
+        ]);
+        Member::create([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'tlp' => $request->tlp,
+            'jenis_kelamin' => $request->jenis_kelamin,
+        ]);
+        return redirect('/member');
     }
 
     /**
@@ -47,6 +65,8 @@ class MemberController extends Controller
     public function show(Member $member)
     {
         //
+        $member = Member::all();
+        return view('member.show',compact('member'));
     }
 
     /**
@@ -58,6 +78,8 @@ class MemberController extends Controller
     public function edit(Member $member)
     {
         //
+        $member = Member::all();
+        return view('member.edit',compact('member'));
     }
 
     /**
@@ -70,6 +92,20 @@ class MemberController extends Controller
     public function update(Request $request, Member $member)
     {
         //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required',
+            'jenis_kelamin' => 'required',
+        ]);
+        $member = Member::find($member->id);
+        $member->   nama           =  $request->nama;
+        $member->   alamat         =  $request->alamat;
+        $member->   tlp            =  $request->tlp;
+        $member->   jenis_kelamin  =  $request->jenis_kelamin;
+        $member->update();
+        return redirect('/member');
+
     }
 
     /**
@@ -81,5 +117,8 @@ class MemberController extends Controller
     public function destroy(Member $member)
     {
         //
+        $member = Member::find($member->id);
+        $member->delete();
+        return redirect('/member');
     }
 }

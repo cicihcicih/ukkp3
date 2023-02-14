@@ -48,6 +48,22 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="/paket" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Paket
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/member" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Member
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('logout')}}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>

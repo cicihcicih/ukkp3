@@ -8,6 +8,9 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\TransaksiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,4 +49,6 @@ Route::get('/dasboard/owner', [DasboardController::class, 'owner'])->name('dasbo
 
 
 Route::resource('outlet', OutletController::class);
-Route::resource('paket', PaketController::class); 
+Route::resource('paket', PaketController::class);
+Route::resource('member', MemberController::class); 
+Route::resource('transaksi', TransaksiController::class); 

@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>laundry</h1>
+            <h1>Manajemen Laundry Jaya</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -28,45 +28,41 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/paket" method="POST">
+              <form action="{{ route('member.store')}}" method="POST">
                 @csrf
-                <div class="form-group" >
-                <select class="form-select" aria-label="Default select example" name="outlets_id" >
-                    <option selected>Open this select menu</option>
-             @foreach ($outlet as $item)
-                    <option value="{{ $item->id}}">{{ $item->id }}</option>
-             @endforeach
-                </select>
-                 </div>
-        <div class="form-group">
-          <select name="jenis" id="Jenis">
-            <option selected>Open this select menu</option>
-            <option value="kiloan">Kiloan</option>
-            <option value="selimut">Selimut</option>
-            <option value="bed_cover">Bed Cover</option>
-            <option value="kaos">Kaos</option>
-            <option value="jenis">Jenis</option>
-          </select>
-        </div>
                 <div class="card-body">                 
                   <div class="form-group">
-                    <label for="inputnama_paket">Nama paket</label>
-                    <input type="text" name="nama_paket" class="form-control" id="inputnama_paket" placeholder="Enter nama_paket">
+                    <label for="inputname">Nama</label>
+                    <input type="text" name="nama" class="form-control" id="inputnama" placeholder="Enter Nama">
                   </div>
                   <div class="form-group">
-                    <label for="inputharga">Harga</label>
-                    <input type="text" name="harga" class="form-control" id="inputharga" placeholder="Enter harga">
-                  </div>                    
+                    <label for="inputAlamat">Alamat</label>
+                    <input type="text" name="alamat" class="form-control" id="inputAlamat" placeholder="Enter Alamat">
+                  </div> 
+                  <div class="form-group">
+                    <label for="inputtlp">No Telepon</label>
+                    <input type="text" name="tlp" class="form-control" id="inputtlp" placeholder="Enter tlp">
+                  </div>                   
                 </div>
+                <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <select class="form-control" name="jenis_kelamin">
+                  <option disabled selected>-- Pilih Salah Satu --</option>
+                  <option value="L">Laki-laki</option>
+                  <option value="P">Perempuan</option>
+                </select>
+              </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
+              
             </div>
             <!-- /.card -->
             <!-- /.card -->
+            
           </div>
           <!--/.col (right) -->
         </div>
