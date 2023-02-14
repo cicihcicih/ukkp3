@@ -23,7 +23,14 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                if (Auth::user()->role == 'admin')
+                return redirect()->route('dasboard.admin');
+                if (Auth::user()->role == 'kasir')
+                return redirect()->route('dasboard.kasir');
+                if (Auth::user()->role == 'owner')
+                return redirect()->route('dasboard.owner');
                 return redirect(RouteServiceProvider::HOME);
+
             }
         }
 

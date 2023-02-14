@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Paket;
+use App\Models\Outlet;
 use Illuminate\Http\Request;
+
 
 class PaketController extends Controller
 {
@@ -15,6 +18,9 @@ class PaketController extends Controller
     public function index()
     {
         //
+        $paket = Paket::all();
+        $outlet = Outlet::all();
+        return view('paket.index', compact('paket', 'outlet'));
     }
 
     /**
@@ -25,6 +31,10 @@ class PaketController extends Controller
     public function create()
     {
         //
+        $paket = Paket::all();
+        $outlet = Outlet::all();
+        return view('paket.create', compact('paket', 'outlet'));
+
     }
 
     /**
@@ -36,6 +46,19 @@ class PaketController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'outlet_id'  => 'required',
+            'jenis'      => 'required',
+            'nama_paket' => 'required',
+            'harga'      => 'required',
+        ]);
+        Paket::create([
+            'outlet_id'  => $request->outlet_id,
+            'jenis'      => $request->jenis,
+            'nama_paket' => $request->nama_paket,
+            'harga'      => $request->harga,
+        ]);
+        return redirect('/paket');
     }
 
     /**
@@ -47,6 +70,8 @@ class PaketController extends Controller
     public function show(Paket $paket)
     {
         //
+        $paket = Paket::find($paket->id);
+        return view('paket.show', compact('paket'));
     }
 
     /**
@@ -58,6 +83,8 @@ class PaketController extends Controller
     public function edit(Paket $paket)
     {
         //
+        $paket = Paket::find($paket->id);
+        return view('paket.edit', compact('paket'));
     }
 
     /**
@@ -70,6 +97,19 @@ class PaketController extends Controller
     public function update(Request $request, Paket $paket)
     {
         //
+        $request->validate([
+            'outlet_id'  => 'required',
+            'jenis'      => 'required',
+            'nama_paket' => 'required',
+            'harga'      => 'required',
+        ]);
+        $paket = Paket::find($paket->id);
+        $paket->outlet_id      =  $request->outlet_id;
+        $paket->jenis          =  $request->jenis;
+        $paket->nama_paket     =  $request->nama_paket;
+        $paket->harga          =  $request->harga;
+        $paket->update();
+        return redirect('/paket');
     }
 
     /**
@@ -81,5 +121,8 @@ class PaketController extends Controller
     public function destroy(Paket $paket)
     {
         //
+        $paket = Paket::find($paket->id);
+        $paket->delete();
+        return redirect('/paket');
     }
 }

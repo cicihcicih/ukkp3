@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Outlet;
+use APP\Modles\User;
 use Illuminate\Http\Request;
 
 class OutletController extends Controller
@@ -15,6 +16,9 @@ class OutletController extends Controller
     public function index()
     {
         //
+        $outlet = Outlet::all();
+        return view('outlet.index', compact('outlet'));
+
     }
 
     /**
@@ -25,6 +29,9 @@ class OutletController extends Controller
     public function create()
     {
         //
+        $outlet = Outlet::all();
+        return view('outlet.create', compact('outlet'));
+
     }
 
     /**
@@ -36,6 +43,17 @@ class OutletController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required',
+        ]);
+        Outlet::create([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'tlp' => $request->tlp,
+        ]);
+        return redirect('/outlet');
     }
 
     /**
@@ -47,6 +65,8 @@ class OutletController extends Controller
     public function show(Outlet $outlet)
     {
         //
+        $outlet = Outlet::find($outlet->id);
+        return view('outlet.show', compact('outlet'));
     }
 
     /**
@@ -58,6 +78,8 @@ class OutletController extends Controller
     public function edit(Outlet $outlet)
     {
         //
+        $outlet = Outlet::find($outlet->id);
+        return view('outlet.edit', compact('outlet'));
     }
 
     /**
@@ -70,6 +92,17 @@ class OutletController extends Controller
     public function update(Request $request, Outlet $outlet)
     {
         //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required',
+        ]);
+        $outlet = Outlet::find($outlet->id);
+        $outlet-> nama = $request->nama;
+        $outlet-> alamat = $request->alamat;
+        $outlet-> tlp = $request->tlp;
+        $outlet->update();
+        return redirect('/outlet');
     }
 
     /**
@@ -81,5 +114,8 @@ class OutletController extends Controller
     public function destroy(Outlet $outlet)
     {
         //
+        $outlet = Outlet::find($outlet->id);
+        $outlet->delete();
+        return redirect('/outlet');
     }
 }
