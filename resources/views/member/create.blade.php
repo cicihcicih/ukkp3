@@ -43,7 +43,6 @@
                     <label for="inputtlp">No Telepon</label>
                     <input type="text" name="tlp" class="form-control" id="inputtlp" placeholder="Enter tlp">
                   </div>                   
-                </div>
                 <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select class="form-control" name="jenis_kelamin">

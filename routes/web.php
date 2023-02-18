@@ -43,12 +43,12 @@ Route::group(['middleware'=> ['auth']], function(){
 Route::view('error/403', 'error.403')->name('error.403');
 
 //dasboard
-Route::get('/dasboard/admin', [DasboardController::class, 'admin'])->name('dasboard.admin')->middleware('auth', 'role:admin,kasir');
+Route::get('/dasboard/admin', [DasboardController::class, 'admin'])->name('dasboard.admin')->middleware('auth', 'role:admin');
 Route::get('/dasboard/kasir', [DasboardController::class, 'kasir'])->name('dasboard.kasir')->middleware('auth', 'role:kasir');
 Route::get('/dasboard/owner', [DasboardController::class, 'owner'])->name('dasboard.owner')->middleware('auth', 'role:owner');
 
 
-Route::resource('outlet', OutletController::class);
-Route::resource('paket', PaketController::class);
-Route::resource('member', MemberController::class); 
-Route::resource('transaksi', TransaksiController::class); 
+Route::resource('outlet', OutletController::class)->middleware('auth', 'role:outlet');
+Route::resource('paket', PaketController::class)->middleware('auth', 'role:paket');
+Route::resource('member', MemberController::class)->middleware('auth', 'role:member');
+Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:transaksi');

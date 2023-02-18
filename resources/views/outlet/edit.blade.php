@@ -27,10 +27,10 @@
                 <h3 class="card-title">Add New class</h3>
               </div>
               <!-- /.card-header -->
-              <!-- form start -->
-              <form action="/outlet/{{$outlet->id}}" method="POST">
+          <form action="/outlet/{{$outlet->id}}" method="POST">
                 @csrf
-                @method('PUT')
+                @method('PUT')        <!-- form start -->
+          
                 <div class="card-body">                 
                 <div class="form-group">
                     <label for="inputname">Nama</label>

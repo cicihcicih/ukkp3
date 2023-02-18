@@ -28,8 +28,9 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route ('member.update',[$member->id])}}" method="POST">
+              <form action="/member/{{ $member->id }}" method="POST">
          @csrf
+         @method('PUT')
        <div class="card-body">
            <div class="form-group">
                <label for="harga_awal">Nama</label>
@@ -37,7 +38,7 @@
              </div>
              <div class="form-group">
                <label for="harga_awal">Alamat</label>
-               <input type="text" name="alamat" value="={{$member->alamat}}" class="form-control" id="harga_awal" placeholder="Alamat">
+               <input type="text" name="alamat" value="{{$member->alamat}}" class="form-control" id="harga_awal" placeholder="Alamat">
              </div>
              <div class="form-group">
                 <label for="harga_awal">No Telepon</label>
@@ -47,10 +48,10 @@
                 <label>Jenis Kelamin</label>
                 <select class="form-control" name="jenis_kelamin">
                   <option disabled selected>-- Pilih Salah Satu --</option>
-                  <option value="L" disabled{{ $member->jenis_kelamin == "L" ? "selected" : "" }}>Laki-laki</option>
-                  <option value="P" disabled {{ $member->jenis_kelamin == "P" ? "selected" : "" }}>Perempuan</option>
+                  <option  value="L" {{ $member->jenis_kelamin == "L" ? "selected" : "" }}>Laki-laki</option>
+                  <option  value="P"  {{ $member->jenis_kelamin == "P" ? "selected" : "" }}>Perempuan</option>
                 </select>
-              </div>
+              </div> 
        </div>
        <!-- /.card-body -->
        <div class="card-footer">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Transaksi;
 use App\Models\Outlet;
 use App\Models\Member;
+use App\Models\paket;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -19,10 +20,9 @@ class TransaksiController extends Controller
     {
         //
         $member    = Member::all();
-        $outlet    = Outlet::all();
-        $user      = User::all();
+        $paket      = Paket::all()->where('outlets_id', Auth()->user()->outlets_id);
         $transaksi = Transaksi::all();
-        return view('transaksi.index',compact('transaksi','member','outlet','user'));
+        return view('transaksi.index',compact('transaksi','member','paket'));
     }
 
     /**
@@ -33,11 +33,10 @@ class TransaksiController extends Controller
     public function create()
     {
         //
-        $member    = Member::all();
-        $outlet    = Outlet::all();
-        $user      = User::all();
+        $member = Member::all();
+        $pakets = Paket::all();
         $transaksi = Transaksi::all();
-        return view('transaksi.create',compact('transaksi','member','outlet','user'));
+        return view('transaksi.create', compact('transaksi', 'member', 'pakets'));
     }
 
     /**
@@ -50,7 +49,7 @@ class TransaksiController extends Controller
     {
         //
         $request->validate([
-            'outlet_id'           => 'required',
+            'outlets_id'           => 'required',
             'kode_invoice'        => 'required',
             'member_id'           => 'required',
             'tgl'                 => 'required',
@@ -64,7 +63,7 @@ class TransaksiController extends Controller
             'user_id'             => 'required',
         ]);
         Transaksi::create([
-            'outlet_id'           => $request->outlet_id,
+            'outlets_id'           => $request->outlets_id,
             'kode_invoice'        => $request->kode_invoice,
             'member_id'           => $request->member_id,
             'tgl'                 => $request->tgl,

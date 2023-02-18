@@ -22,21 +22,21 @@ class UserSeeder extends Seeder
                 'username' => 'admin',
                 'password' => bcrypt('admin'),
                 'role' => 'admin',
-                'outlet_id' => '1'
+                'outlets_id' => '1'
             ],
             [
                 'nama' => 'kasir',
                 'username' => 'kasir',
                 'password' => bcrypt('kasir'),
                 'role' => 'kasir',
-                'outlet_id' => '2'
+                'outlet_id' => '1'
             ],
             [
                 'nama' => 'owner',
                 'username' => 'owner',
                 'password' => bcrypt('owner'),
                 'role' => 'owner',
-                'outlet_id' => '3'
+                'outlet_id' => '1'
             ]
         ];
 

@@ -17,14 +17,12 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
-        $levels = array_slice(func_get_args(), 2);
-        foreach ($levels as $level) {
-            $user = Auth::user()->level;
-            if( $user == $level) {
+        $roles = array_slice(func_get_args(), 2);
+        foreach ($roles as $role);
+            $user = Auth::user()->role;
+            if( $user == $role){
                 return $next($request);
             }
+        return redirect()->route('error.403');
     }
-    return redirect()->route('error.403');
-}
 }

@@ -16,7 +16,8 @@
                 <div class="card-body">
                 <div class="form-group">
                     <label for="inputnama">Nama</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Enter nama" value="{{ $member->nama }}" disabled >
+                    <input type="text" name="nama" class="form-control" id="nama" 
+                    placeholder="Enter nama" value="{{ $member->nama }}" disabled >
             </div>
             <div class="form-group">
                     <label for="inputAlamat">Alamat</label>
