@@ -27,7 +27,7 @@
                     <label for="inputtlp">Telepon</label>
                     <input type="text" name="tlp" class="form-control" id="inputTelepon" placeholder="Enter tlp" value="{{ $outlet->tlp }}" disabled >
             </div>
-                  
+</div>
             <!-- /.card-body -->
 
             <div class="card-footer">

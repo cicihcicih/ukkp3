@@ -58,11 +58,12 @@
         @endforelse
       </table>
     </div>
+</div>
     <!-- /.card-body -->
   
 @endsection
 
-@push('scripts')
+<!-- @push('scripts')
 <script src="{{ asset ('adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{ asset ('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 
@@ -84,4 +85,4 @@
 @endpush
   
 
-
+ -->
