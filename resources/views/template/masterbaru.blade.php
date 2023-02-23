@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('Adminlte/dist/css/adminlte.min.css')}}">
+@stack('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -50,5 +51,6 @@
 <script src="{{ asset('Adminlte/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('Adminlte/dist/js/demo.js')}}"></script>
+@stack('js')
 </body>
 </html>

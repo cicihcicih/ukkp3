@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 class DasboardController extends Controller
@@ -13,7 +14,8 @@ class DasboardController extends Controller
     }
     public function kasir()
     {
-        return view('dasboard.kasir');
+        $member = Member::all();
+        return view('dasboard.kasir', compact('member'));
     }
     public function owner()
     {

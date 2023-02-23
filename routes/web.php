@@ -51,4 +51,11 @@ Route::get('/dasboard/owner', [DasboardController::class, 'owner'])->name('dasbo
 Route::resource('outlet', OutletController::class)->middleware('auth', 'role:outlet');
 Route::resource('paket', PaketController::class)->middleware('auth', 'role:paket');
 Route::resource('member', MemberController::class)->middleware('auth', 'role:member');
-Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:transaksi');
+// Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:transaksi');
+
+Route::middleware(['auth', 'role:kasir'])->group(function(){
+    Route::post('transaksi/baru', [TransaksiController::class, 'create'])->name('transaksi.baru');
+    Route::get('transaksi/{transaksi}', [TransaksiController::class, 'edit'])->name('transaksi.proses');
+    Route::post('transaksi/simpan', [TransaksiController::class, 'store'])->name('transaksi.store');
+    // Route::post('transaksi/', [TransaksiController::class, 'index'])->name('transaksi.index');
+});

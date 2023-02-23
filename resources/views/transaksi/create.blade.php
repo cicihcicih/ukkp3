@@ -1,8 +1,4 @@
-@extends('template.masterbaru')
-
-@section('judul')
-<h1>Ini Halaman Create Transaksi</h1>
-@endsection
+@extends('master')
 
 @section('content')
 <div class="row">
@@ -19,11 +15,11 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Pilih Data Member</label>
             <select name="id_member" id="id_member">
-                @forelse ($member as $member)
-                <option value="{{ $member->id }}">{{ $member->nama }}</option>
-                @empty
+              @forelse ($members as $member)
+                <option value="{{ $member->id }}">{{ $member->nama }}</option>                  
+              @empty
                 <option value="" disabled>Tidak Ada Member</option>
-                @endforelse
+              @endforelse
             </select>
           </div>
         </div>
@@ -40,21 +36,26 @@
         <h3 class="card-title">Pilih Paket</h3>
       </div>
       <div class="card-body">
-      <div class="form-group">
-            <label for="exampleInputEmail1">Pilih Data Paket</label>
-            <select name="id_paket" id="id_paket">
-                @forelse ($pakets as $paket)
-                <option value="{{ $paket->id }}">{{ $paket->nama_paket }}</option>
-                @empty
-                <option value="" disabled>Tidak Ada Paket Tersedia</option>
-                @endforelse
-            </select>
-          </div>
-    </div>
+        <div class="form-group">
+          <label for="id_paket">Pilih Data Paket</label>
+          <select name="id_paket" id="id_paket">
+            @forelse ($pakets as $paket)
+              <option value="{{ $paket->id }}">{{ $paket->nama_paket }}</option>                  
+            @empty
+              <option value="" disabled>Tidak Ada Paket Tersedia</option>
+            @endforelse
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="qty">Jumlah</label>
+          <input type="number" name="qty" id="qty">
+        </div>
+      </div>
       <!-- /.card-body -->
     </div>
     <!-- /.card -->
   </div>
   <!--/.col (right) -->
 </div>
+
 @endsection
