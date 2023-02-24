@@ -43,42 +43,32 @@
         </p>
       </a>
       </li>
+      <li class="nav-item">
+      <a href="/dasboard/kasir" class="nav-link">
+        <i class="nav-icon fas fa-user-alt"></i>
+        <p>
+          Kasir
+        </p>
+      </a>
+      </li>
+      <li class="nav-item">
+      <a href="/dasboard/owner" class="nav-link">
+        <i class="nav-icon fas fa-user-alt"></i>
+        <p>
+          Owner
+        </p>
+      </a>
+      </li>
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           @if (auth()->user()->role == 'admin')
-          <li class="nav-header">ini outlet</li>
-          <li class="nav-item">
-            <a href="/outlet" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Outlet
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">ini paket</li>
-          <li class="nav-item">
-            <a href="/paket" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Paket
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">ini member</li>
-          <li class="nav-item">
-            <a href="/member" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Member
-              </p>
-            </a>
-          </li>
+          
           @endif
           <li class="nav-item">
             <a href="{{ route('logout')}}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon fas fa-sign-in-alt"></i>
               <p>
                 Logout
               </p>

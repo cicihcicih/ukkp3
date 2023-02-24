@@ -10,6 +10,8 @@ use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\DetailTransaksiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,5 +59,6 @@ Route::middleware(['auth', 'role:kasir'])->group(function(){
     Route::post('transaksi/baru', [TransaksiController::class, 'create'])->name('transaksi.baru');
     Route::get('transaksi/{transaksi}', [TransaksiController::class, 'edit'])->name('transaksi.proses');
     Route::post('transaksi/simpan', [TransaksiController::class, 'store'])->name('transaksi.store');
+    Route::post('transaksi/{id}/detail', [DetailTransaksiController::class, 'store'])->name('transaksi.detail.store');
     // Route::post('transaksi/', [TransaksiController::class, 'index'])->name('transaksi.index');
 });

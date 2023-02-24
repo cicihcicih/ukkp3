@@ -7,6 +7,7 @@ use App\Models\Outlet;
 use App\Models\Transaksi;
 use App\Models\Member;
 use App\Models\Paket;
+use App\Models\DetailTransaksi;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -116,15 +117,11 @@ class TransaksiController extends Controller
      * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaksi $transaksi)
+    public function edit(Transaksi $transaksi, Paket $paket)
     {
-        //
-        // $member    = Member::all();
-        // $outlet    = Outlet::all();
-        // $user      = User::all();
-        // $transaksi = Transaksi::find($transaksi->id);
-        // return view('transaksi.edit',compact('transaksi','member','outlet','user'));
-    }
+        $paket = Paket::all()->where('outlet_id', $paket->outlet_id);
+        $member = Member::all();
+        return view('transaksi.proses', compact('paket','member'));
 
     /**
      * Update the specified resource in storage.
@@ -133,6 +130,7 @@ class TransaksiController extends Controller
      * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
+    }
     public function update(Request $request, Transaksi $transaksi)
     {
         //
