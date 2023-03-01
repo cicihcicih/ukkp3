@@ -1,4 +1,4 @@
-@extends('template.masterbaru')
+<!-- @extends('template.masterbaru')
 
 @section('judul')
 <h1>Manajemen Outlet</h1>
@@ -8,10 +8,10 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Add New class</h3>
-              </div>
+              </div> -->
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/paket" method="POST">
+              <!-- <form action="/paket" method="POST">
                 @csrf
             <div class="card-body">                 
                 <div class="form-group">
@@ -36,14 +36,14 @@
                       <label for="inputHarga">Harga</label>
                       <input type="text" name="harga" class="form-control" id="inputHarga" placeholder="Enter harga" value="{{ $paket->harga }}" disabled >
               </div>
-            </div>
+            </div> -->
                   
             <!-- /.card-body -->
 
-            <div class="card-footer">
+            <!-- <div class="card-footer">
                   <a class="btn btn-info"href="/paket">Back</a>
                 </div>
               </form>
             </div>
             
-@endsection
+@endsection -->

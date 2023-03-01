@@ -58,12 +58,12 @@
         </select>
         <div class="row">
           <div class="col-8">
-            <div class="icheck-primary">
+            <!-- <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
                I agree to the <a href="#">terms</a>
               </label>
-            </div>
+            </div> -->
           </div>
           <!-- /.col -->
           <div class="col-4">
@@ -74,7 +74,7 @@
       </form>
 
 
-      <a href="login.html" class="text-center">I already have a membership</a>
+      <!-- <a href="login.html" class="text-center">I already have a membership</a> -->
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

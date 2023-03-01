@@ -114,7 +114,7 @@
                <!-- Slide Two - Set the background image for this slide in the line below -->
                <div class="carousel-item" style="background-image: url('{{ asset('ini/images/mesin.jpeg')}}')">
                   <div class="carousel-caption d-none d-md-block">
-					 <h3>Bersih Rapi Dan BertanggungJawab</h3>
+					 <h3>Bersih Rapih Dan BertanggungJawab</h3>
                      <!-- <p>A Great Theme For Business Consulting</p> -->
                   </div>
                </div>
@@ -161,11 +161,11 @@
         </div>
 	</div>	
 	
-	<div class="services-bar">
+	<!-- <div class="services-bar">
 		<div class="container">
-			<h1 class="py-4">Our Best Services </h1>
+			<h1 class="py-4">Our Best Services </h1> -->
 			<!-- Services Section -->
-			<div class="row">
+			<!-- <div class="row">
 			   <div class="col-lg-4 mb-4">
 					<div class="card h-100">
 						<div class="card-img">
@@ -232,14 +232,14 @@
 						</div>
 					</div>
 			   </div>
-			</div>
+			</div> -->
 			<!-- /.row -->
-		</div>
-	</div>
+		<!-- </div>
+	</div> --> 
 		
-	<div class="container">
+	<!-- <div class="container"> -->
         <!-- Portfolio Section -->
-        <div class="portfolio-main">
+        <!-- <div class="portfolio-main">
             <h2>Our Portfolio</h2>
 			<div class="col-lg-12">
 				<div class="project-menu text-center">
@@ -343,10 +343,10 @@
                </div>
             </div>
             <!-- /.row -->
-        </div>
-    </div>
+        <!-- </div> --> 
+    <!-- </div> -->
 	
-	<div class="blog-slide">
+	<!-- <div class="blog-slide">
 		<div class="container">
 			<h2>Our Blog</h2>
 			<div class="row">
@@ -443,11 +443,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 	
 	<!-- Contact Us -->
-	<div class="touch-line">
+	<!-- <div class="touch-line">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
@@ -458,7 +458,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
     <!-- /.container -->
     <!--footer starts from here-->

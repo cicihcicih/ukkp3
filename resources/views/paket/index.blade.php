@@ -43,7 +43,7 @@
         <td class="th2">{{ $paket->harga }}</td>
         <td class="th4">
         <form action="{{route ('paket.destroy', [$paket->id])}}" method="POST">
-        <a class="btn btn-info mr-3" href="paket/{{ $paket->id }}">DETAIL</a>
+        <!-- <a class="btn btn-info mr-3" href="paket/{{ $paket->id }}">DETAIL</a> -->
         <a class="btn btn-warning mr-3" href="paket/{{ $paket->id}}/edit">EDIT</a>
         @csrf
         @method('DELETE')
