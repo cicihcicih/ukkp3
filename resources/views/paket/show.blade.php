@@ -1,4 +1,4 @@
-<!-- @extends('template.masterbaru')
+@extends('template.masterbaru')
 
 @section('judul')
 <h1>Manajemen Outlet</h1>
@@ -11,7 +11,7 @@
               </div> -->
               <!-- /.card-header -->
               <!-- form start -->
-              <!-- <form action="/paket" method="POST">
+              <form action="/paket" method="POST">
                 @csrf
             <div class="card-body">                 
                 <div class="form-group">
@@ -40,10 +40,10 @@
                   
             <!-- /.card-body -->
 
-            <!-- <div class="card-footer">
+            <div class="card-footer">
                   <a class="btn btn-info"href="/paket">Back</a>
                 </div>
               </form>
             </div>
             
-@endsection -->
+@endsection

@@ -12,9 +12,10 @@
         <div class="image">
           <img src="{{ asset('Adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
+           {{ Auth::user()->nama}}
+        <!-- <div class="info">
           <a href="#" class="d-block">Admin</a>
-        </div>
+        </div> -->
       </div>
 
       <!-- SidebarSearch Form -->
@@ -28,6 +29,7 @@
           </div>
         </div>
       </div>
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
