@@ -16,6 +16,10 @@ class DtailTransaksiController extends Controller
     public function index()
     {
         //
+        $detailTransaksi = DetailTransaksi::all();
+        $transaksi       = Transaksi::all();
+        $paket           = Paket::all();
+        return view('detail_transaksi.index', compact('detailTransaksi','transaksi','paket'));
     }
 
     /**
@@ -26,6 +30,10 @@ class DtailTransaksiController extends Controller
     public function create()
     {
         //
+        $detailTransaksi = DetailTransaksi::all();
+        $transaksi       = Transaksi::all();
+        $paket           = Paket::all();
+        return view('detail_transaksi.create', compact('detailTransaksi','transaksi','paket'));
     }
 
     /**
@@ -38,17 +46,17 @@ class DtailTransaksiController extends Controller
     {
         //
         $request->validate([
-            'id_paket'  => 'required',
+            'paket_id'  => 'required',
             'qty'       => 'required'
         ],
         [
-            'id_paket.required' => 'Pilih Paket',
+            'paket_id.required' => 'Pilih Paket',
             'qty.required'      => 'Isi Qty'
         ]);
 
         $detailTransaksi = new DetailTransaksi;
         $detailTransaksi->transaksi_id  = $transaksi;
-        $detailTransaksi->paket_id      = $request->id_paket;
+        $detailTransaksi->paket_id      = $request->paket_id;
         $detailTransaksi->qty           = $request->qty;
         $detailTransaksi->save();
 
