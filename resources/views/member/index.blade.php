@@ -15,7 +15,7 @@
               <i class="fas fa-times"></i>
             </button>
           </div>
-      <h3 class="card-title">DataTable with minimal features & hover style</h3>
+      <h3 class="card-title">Member</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -47,8 +47,8 @@
               <!-- <a class="btn btn-info mr-3" href="member/{{ $member->id }}">Detail</a> -->
               <a class="btn btn-warning mr-3" href="member/{{ $member->id }}/edit">Edit</a>
             @csrf
-            @method('DELETE')
-           <input type="submit" class="btn btn-danger" value="Delete">
+            <!-- @method('DELETE')
+           <input type="submit" class="btn btn-danger" value="Delete"> -->
           </form>
             </td>
          </tr>

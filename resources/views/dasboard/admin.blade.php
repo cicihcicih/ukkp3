@@ -69,9 +69,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>User</h3>
+                <h3>Petugas</h3>
 
-                <p>Tambah User</p>
+                <p>Tambah Petugas</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>

@@ -15,7 +15,7 @@
           <div class="form-group">
             <label>Nama</label>
             <input type="text" name="nama" class="form-control p_input">
-          </div>
+        </div>
           <div class="form-group">
             <label>Username</label>
             <input type="text" name="username" class="form-control p_input">
@@ -25,6 +25,15 @@
             <input type="password" name="password" class="form-control p_input">
           </div>
           <div class="form-group">
+                <label>Outlet</label>
+                <select class="form-control" name="outlet_id">
+                  <option disabled selected>-- Pilih Salah Satu --</option>
+                  @foreach ($outlet as $item)
+                <option value="{{ $item->id}}">{{ $item->id }}</option>
+                  @endforeach
+                </select>
+              </div>
+          <!-- <div class="form-group">
           <label>Outlet</label>
           <select class="form-select" aria-label="Default select example" name="outlet_id" >
             <option selected>Open this select menu</option>
@@ -32,17 +41,19 @@
             <option value="{{ $item->id}}">{{ $item->id }}</option>
             @endforeach
           </select>
+          </div> -->
+            </div>
+            <div class="form-group">
+                <label>Pilih role</label>
+                <select class="form-control" name="role" id="role">
+                  <option disabled selected>-- Pilih Salah Satu --</option>
+                  <option selected>Pilih role</option>
+                  <option value="admin">Admin</option>
+                  <option value="kasir">Kasir</option>
+                  <option value="owner">Owner</option>
+                </select>
+              </div>
           </div>
-            </div>
-          <div class="col-md-6 col-12">
-          <div class="form select">
-            <select name="role" id="role">
-              <option selected>Pilih role</option>
-              <option value="admin">Admin</option>
-              <option value="kasir">Kasir</option>
-              <option value="owner">Owner</option>
-            </select>
-            </div>
           </div>
           <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
@@ -54,6 +65,7 @@
               Kembali
             </a>
           </div>
+          </div>
           @endif
           @if (auth()->user()->role == 'kasir')
           <div class="col-md-6 d-flex justify-content-end">
@@ -61,11 +73,13 @@
               Kembali
             </a>
             </div>
+          </div>
           @endif
           </div>
       </div>
       <!-- /.card-body -->
      </form>
  </div>
+</div>
 </div>
 @endsection

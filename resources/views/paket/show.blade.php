@@ -8,7 +8,7 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Add New class</h3>
-              </div> -->
+              </div> 
               <!-- /.card-header -->
               <!-- form start -->
               <form action="/paket" method="POST">
@@ -36,7 +36,7 @@
                       <label for="inputHarga">Harga</label>
                       <input type="text" name="harga" class="form-control" id="inputHarga" placeholder="Enter harga" value="{{ $paket->harga }}" disabled >
               </div>
-            </div> -->
+            </div> 
                   
             <!-- /.card-body -->
 

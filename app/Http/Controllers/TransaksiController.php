@@ -27,6 +27,7 @@ class TransaksiController extends Controller
         $pakets     = Paket::all()->where('outlet_id', Auth()->user()->outlet_id);
         $outlets    = Outlet::all();
         $users      = User::all();
+        $transaksi  = Transaksi::all();
         return view('transaksi.index',compact('members','pakets','transaksis','outlets','users'));
     }
 
@@ -39,9 +40,9 @@ class TransaksiController extends Controller
     {
         //
         $transaksi = new Transaksi;
-        $transaksi->outlet_id       = Auth::user()->outlet_id;
+        $transaksi->outlets_id       = Auth::user()->outlet_id;
         $transaksi->kode_invoice    = '';
-        $transaksi->member_id       = $request->member_id;
+        $transaksi->member_id       = '1';
         $transaksi->tgl             = Carbon::now()->format('Y-m-d');
         $transaksi->batas_waktu     = Carbon::now()->format('Y-m-d');
         $transaksi->tgl_bayar       = Carbon::now()->format('Y-m-d');
@@ -52,7 +53,7 @@ class TransaksiController extends Controller
         $transaksi->dibayar         = 'belum_dibayar';
         $transaksi->user_id        = Auth::user()->id;
         $transaksi->save();
-        $idTransaksi = $transaksi->id;
+        // $idTransaksi = $transaksi->id;
         return redirect()->route('transaksi.proses', $transaksi->id);
 
     }
@@ -121,9 +122,10 @@ class TransaksiController extends Controller
      */
     public function edit(Transaksi $transaksi, Paket $paket)
     {
-        $pakets = Paket::all()->where('outlet_id', $transaksi->outlet_id);
+        $pakets = Paket::all();
         $transaksis = Transaksi::all();
-        return view('transaksi.proses', compact('pakets','transaksis'));
+        $member = Member::all();
+        return view('transaksi.proses', compact('pakets','member','transaksis'));
 
     /**
      * Update the specified resource in storage.
@@ -137,7 +139,7 @@ class TransaksiController extends Controller
     {
         //
         $request->validate([
-            'outlet_id'           => 'required',
+            'outlets_id'           => 'required',
             'kode_invoice'        => 'required',
             'member_id'           => 'required',
             'tgl'                 => 'required',
@@ -151,7 +153,7 @@ class TransaksiController extends Controller
             'user_id'             => 'required',
             ]);
             $transaksi = Transaksi::find($transaksi->id);
-            $transaksi->   outlet_id            =  $request->outlet_id;
+            $transaksi->   outlets_id            =  $request->outlets_id;
             $transaksi->   kode_invoice         =  $request->kode_invoice;
             $transaksi->   member_id            =  $request->member_id;
             $transaksi->   tgl                  =  $request->tgl;

@@ -42,18 +42,27 @@ Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
 Route::group(['middleware'=> ['auth']], function(){
     Route::get('/home',[HomeController::class, 'index'])->name('home');
 });
-
+//eror
 Route::view('error/403', 'error.403')->name('error.403');
 
 //dasboard
 Route::get('/dasboard/admin', [DasboardController::class, 'admin'])->name('dasboard.admin')->middleware('auth', 'role:admin');
 Route::get('/dasboard/kasir', [DasboardController::class, 'kasir'])->name('dasboard.kasir')->middleware('auth', 'role:kasir');
-Route::get('/dasboard/owner', [DasboardController::class, 'owner'])->name('dasboard.owner')->middleware('auth', 'role:owner');
+Route::get('/dasboard/owner', [DasboardController::class, 'owner'])->name('dasboard.owner')->middleware('auth', 'role:owner,admin');
 
+//outlet
+Route::resource('outlet', OutletController::class)->middleware('auth', 'role:admin');
 
-Route::resource('outlet', OutletController::class)->middleware('auth', 'role:outlet');
-Route::resource('paket', PaketController::class)->middleware('auth', 'role:paket');
-Route::resource('member', MemberController::class)->middleware('auth', 'role:member');
+//paket
+Route::resource('paket', PaketController::class)->middleware('auth', 'role:admin');
+
+//member
+Route::resource('member', MemberController::class)->middleware('auth', 'role:admin,kasir');
+
+//transaksi
+Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:admin,kasir');
+
+//user
 Route::resource('user',UserController::class)->middleware('auth','role:admin');
 
 // Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:transaksi');

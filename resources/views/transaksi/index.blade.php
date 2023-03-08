@@ -10,52 +10,65 @@
     <div class="card-tools">
     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
-            </button>
+    </button>
             <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
               <i class="fas fa-times"></i>
             </button>
           </div>
-      <h3 class="card-title">transaksi</h3>
+      <h3 class="card-title">Data Transaksi</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-    <!-- <a href="member/create" class="btn btn-primary">
-          <i class="fas fa-plus"></i>
+    <a href="transaksi/create" class="btn btn-primary">
+    <i class="fas fa-plus-square"></i>
            Tambah
-        </a> -->
+        </a>
+        <br>
+        </tr>
+        <br>
       <table id="example2" class="table table-bordered table-hover">
         <thead>
         <tr>
-        <th>No</th>
-        <th>Nama Outlet</th>
-        <th>Nama Member</th>
-        <th>Status</th>
-        <th>Nama User</th>
-        <th>Action</th>
+          <th>No</th>
+          <th>Nama Outlet</th>
+          <th>Nama Member</th>
+          <th>Status</th>
+          <th>Dibayar</th>
+          <th>Action</th>
         </tr>
         </thead>
         <tbody>
-          <tr>
-            @foreach($transaksis as $trx)
-            <th class="th1">{{ $loop->iteration}}</th>
-            <td>{{$trx->outlet_id}}</td>
-            <td>{{$trx->member_id}}</td>
-            <td><label class="badge badge-info">{{$trx->status}}</label></td>
-            <td>{{$trx->user_id}}</td>
-            <td>
-              <form action="{{route ('transaksi.destroy', [$trx->id])}}" method="POST">
-                <a class="btn btn-info mr-3" href="transaksi/{{ $trx->id }}">DETAIL</a>
-                <a class="btn btn-warning mr-3" href="transaksi/{{ $trx->id}}/edit">EDIT</a>
-                @csrf
-                @method('DELETE')
-                <input type="submit" class="btn btn-danger" value="hapus azza">
+          @forelse($transaksis as $transaksi)
+         <tr>
+         <td>{{ $loop->iteration }}</td>
+          <td>{{ $transaksi->outlet->nama }}</td>
+          <td>{{ $transaksi->member->nama }}</td>
+          <td>{{ $transaksi->status }}</td>
+          <td>{{ $transaksi->dibayar }}</td>
+          <td>
+          <form action="{{ route ('transaksi.destroy', [$transaksi->id])}}" method="POST">
+              <a class="btn btn-info mr-3" href="transaksi/{{$transaksi->id}}">
+              <i class=""></i> Detail</a>
+              <a class="btn btn-warning mr-3" href="transaksi/{{$transaksi->id}}/edit">
+              <i class=""></i> Edit</a>
+              <form action="/transaksi/{{$transaksi->id}}" method="POST">
+            @csrf
+            @method('DELETE')
+           <button type="submit" class="btn btn-danger" value="Delete"> 
+            Delete
+          </button>
+          </form>
             </td>
-          </tr>
-        </tbody>
+         </tr>
+         @empty
+         <tr>
+          <td>Data Masih Kosong</td>
+        </tr>
+
         @endforelse
       </table>
     </div>
-</div>
+    </div>  
     <!-- /.card-body -->
 @endsection
 

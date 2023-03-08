@@ -25,13 +25,13 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="social-media">
-						<ul>
+						<!-- <ul>
 							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
 							<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
 							<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
 							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -49,7 +49,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-				<img src="{{ asset('ini/images/')}}" alt="logo" />
+				<img src="{{ asset('ini/images/laundrycc.jpg')}}" alt="logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fas fa-bars"></span>
@@ -105,21 +105,21 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                <!-- Slide One - Set the background image for this slide in the line below -->
-               <div class="carousel-item active" style="background-image: url('{{ asset('ini/images/mesin.jpeg')}}')">
+               <div class="carousel-item active" style="background-image: url('{{ asset('ini/images/xxxxx.jpg')}}')">
                   <div class="carousel-caption d-none d-md-block">
 					 <h3>Selamat Datang Di Laundry CC</h3>
                      <!-- <p>A Great Theme For Business Consulting</p> -->
                   </div>
                </div>
                <!-- Slide Two - Set the background image for this slide in the line below -->
-               <div class="carousel-item" style="background-image: url('{{ asset('ini/images/mesin.jpeg')}}')">
+               <div class="carousel-item" style="background-image: url('{{ asset('ini/images/bbbbb.jpg')}}')">
                   <div class="carousel-caption d-none d-md-block">
 					 <h3>Bersih Rapih Dan BertanggungJawab</h3>
                      <!-- <p>A Great Theme For Business Consulting</p> -->
                   </div>
                </div>
                <!-- Slide Three - Set the background image for this slide in the line below -->
-               <div class="carousel-item" style="background-image: url('{{ asset('ini/images/mesin.jpeg')}}')">
+               <div class="carousel-item" style="background-image: url('{{ asset('ini/images/aaaaa.jpg')}}')">
                   <div class="carousel-caption d-none d-md-block">
 				  <h3>Yu laundry Bersama Laundry CC</h3>
                      <!-- <p>A Great Theme For Business Consulting</p> -->
@@ -146,6 +146,7 @@
                   <h2>Selamat Datang Di Laundry CC</h2>
 				  <p>Terapkan budaya males nyuci pakaian, biar Laundry CC aja yang bereskan pakaian kotormu. Dijamin hasilnya kinclong, wangi, dan pasti harganya hemat.</p>
                   <p>Laundry kami memakai bahan sabun berkualitas demi menjaga pakaian tetap bersih, harum, dan tidak merusak kain. Dijamin tidak mengecewakan!</p>
+				  <br><br>
 				  <!-- <h5>Our smart approach</h5>
                   <ul>
                      <li>Sed at tellus eu quam posuere mattis.</li>
@@ -462,13 +463,13 @@
 	
     <!-- /.container -->
     <!--footer starts from here-->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container bottom_border">
             <div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-6 col">
-					<h5 class="headin5_amrc col_white_amrc pt2">About Us</h5>
+					<h5 class="headin5_amrc col_white_amrc pt2">About Us</h5> -->
 					<!--headin5_amrc-->
-					<p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<!-- <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 					<ul class="footer-social">
 						<li><a class="facebook hb-xs-margin" href="#"><span class="hb hb-xs spin hb-facebook"><i class="fab fa-facebook-f"></i></span></a></li>
 						<li><a class="twitter hb-xs-margin" href="#"><span class="hb hb-xs spin hb-twitter"><i class="fab fa-twitter"></i></span></a></li>
@@ -476,24 +477,24 @@
 						<li><a class="googleplus hb-xs-margin" href="#"><span class="hb hb-xs spin hb-google-plus"><i class="fab fa-google-plus-g"></i></span></a></li>
 						<li><a class="dribbble hb-xs-margin" href="#"><span class="hb hb-xs spin hb-dribbble"><i class="fab fa-dribbble"></i></span></a></li>
 					</ul>
-				</div>	
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+				</div>	 -->
+				<!-- <div class="col-lg-3 col-md-6 col-sm-6">
+					<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5> -->
 					<!--headin5_amrc-->
-					<ul class="footer_ul_amrc">
+					<!-- <ul class="footer_ul_amrc">
 						<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Default Version</a></li>
 						<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Boxed Version</a></li>
 						<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Our Team </a></li>
 						<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>About Us</a></li>
 						<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Our Services</a></li>
 						<li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Get In Touch</a></li>
-					</ul>
+					</ul> -->
 					<!--footer_ul_amrc ends here-->
-				</div>
+				<!-- </div>
 				<div class="col-lg-3 col-md-6 col-sm-6 col">
-					<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+					<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5> -->
 					<!--headin5_amrc ends here-->
-					<ul class="footer_ul2_amrc">
+					<!-- <ul class="footer_ul2_amrc">
 						<li>
 							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
 							<p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
@@ -505,10 +506,10 @@
 						<li>
 							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
 							<p>Lorem Ipsum is simply dummy...<a href="#">https://www.lipsum.com/</a></p>
-						</li>
-					</ul>
+						</li> 
+					</ul>-->
 					<!--footer_ul2_amrc ends here-->
-				</div>
+				<!-- </div>
 				<div class="col-lg-3 col-md-6 col-sm-6 ">
 					<div class="news-box">
 						<h5 class="headin5_amrc col_white_amrc pt2">Newsletter</h5>
@@ -522,12 +523,12 @@
 							</div>
 						</form>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
         <div class="container">
-            <p class="copyright text-center">All Rights Reserved. &copy; 2018 <a href="#">Zonebiz</a> Design By : 
-				<a href="https://html.design/">html design</a>
+            <p class="copyright text-center">Git Hub 
+				<a href="https://github.com/cicihcicih/ukkp3">Silahkan Klik</a>
             </p>
         </div>
     </footer>

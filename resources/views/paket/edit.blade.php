@@ -32,12 +32,14 @@
              <label for="harga_awal">Harga </label>
              <input type="integer" name="harga" class="form-control" id="harga_awal" placeholder="Enter Harga" value="{{ $paket->harga }}">
            </div>
+          </div>
        <!-- /.card-body -->
        <div class="card-footer">
          <button type="submit" class="btn btn-primary">Submit</button> 
        </div>
      </form>
  </div>
+</div>
 @endsection
 
 

@@ -18,7 +18,6 @@ class CreateDetailTransaksisTable extends Migration
             $table->foreignId('transaksi_id')->constrained('transaksis');
             $table->foreignId('paket_id')->constrained('pakets');
             $table->double('qty');
-            $table->text('keterangan');
             $table->timestamps();
         });
     }

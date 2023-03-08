@@ -16,6 +16,14 @@ class Paket extends Model
 
     public function outlet()
     {
-        return $this->hasOne('App\Outlet','outlets_id');
+        return $this->hasOne('App\Models\Outlet','id','outlets_id');
+    }
+    public function detailtransaksi()
+    {
+        return $this->belongsTo('App\Models\DetailTransaksi','transaksi');
+    }
+    public function transaksi()
+    {
+        return $this->belongsTo('App\Models\Transaksi','transaksi');
     }
 }

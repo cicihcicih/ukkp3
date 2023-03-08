@@ -72,4 +72,4 @@ function cekDiskon(subTotal) {
                 alert(ErrorMessage.join('\n'))
                 ErrorMessage = []
             }
-});
+})

@@ -1,17 +1,17 @@
-<!-- @extends('template.masterbaru')
+@extends('template.masterbaru')
 
 @section('judul')
 <h1>Manajemen Outlet</h1>
 @endsection
 
-@section('content') -->
-            <!-- <div class="card card-primary">
+@section('content')
+            <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Add New class</h3>
-              </div> -->
+              </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <!-- <form action="/outlet" method="POST">
+              <form action="/outlet" method="POST">
                 @csrf
             <div class="card-body">                 
                   <div class="form-group">
@@ -27,13 +27,13 @@
                     <label for="inputtlp">Telepon</label>
                     <input type="text" name="tlp" class="form-control" id="inputTelepon" placeholder="Enter tlp" value="{{ $outlet->tlp }}" disabled >
             </div>
-</div> -->
+</div>
             <!-- /.card-body -->
 
-            <!-- <div class="card-footer">
+            <div class="card-footer">
                   <a class="btn btn-info"href="/outlet">Back</a>
                 </div>
               </form>
             </div>
             
-@endsection -->
+@endsection

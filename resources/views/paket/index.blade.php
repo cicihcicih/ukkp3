@@ -43,8 +43,8 @@
         <td class="th2">{{ $paket->harga }}</td>
         <td class="th4">
         <form action="{{route ('paket.destroy', [$paket->id])}}" method="POST">
-        <!-- <a class="btn btn-info mr-3" href="paket/{{ $paket->id }}">DETAIL</a> -->
-        <a class="btn btn-warning mr-3" href="paket/{{ $paket->id}}/edit">EDIT</a>
+        <a class="btn btn-info mr-3" href="paket/{{ $paket->id }}">Detail</a>
+        <a class="btn btn-warning mr-3" href="paket/{{ $paket->id}}/edit">Edit</a>
         @csrf
         @method('DELETE')
         <input type="submit" class="btn btn-danger" value="hapus azza">

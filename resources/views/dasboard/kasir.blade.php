@@ -17,13 +17,13 @@
               <br><br>
               <form action="{{ route('transaksi.baru') }}" method="POST">
                 @csrf
-                <select class="form-control select2" style="width: 100%;" name="member_id">
+                <select class="form-control" style="width: 100%;" name="member_id">
                   <option selected="selected" disabled>-- Pilih Member --</option>
                   @foreach ($member as $item)
                     <option value="{{ $item->id }}">{{ $item->nama }}</option>
                   @endforeach
                 </select>
-                <br><br>
+                <br>
                 <input type="submit" value="Transaksi baru" class="btn btn-success btn-lg">
               </form>
           </div>

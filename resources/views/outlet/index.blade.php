@@ -42,7 +42,7 @@
           <td>{{ $outlet->tlp }}</td>
           <td>
           <form action="{{route ('outlet.destroy', [$outlet->id])}}" method="POST">
-              <!-- <a class="btn btn-info mr-3" href="outlet/{{ $outlet->id }}">Detail</a> -->
+              <a class="btn btn-info mr-3" href="outlet/{{ $outlet->id }}">Detail</a>
               <a class="btn btn-warning mr-3" href="outlet/{{ $outlet->id }}/edit">Edit</a>
             @csrf
             @method('DELETE')
